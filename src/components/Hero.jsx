@@ -79,8 +79,11 @@ export default function Hero() {
     const observer = new MutationObserver(observeWatermark)
     observer.observe(document.body, { childList: true, subtree: true })
     
-    // Check frequently for the first few seconds
-    const killInterval = setInterval(observeWatermark, 1000)
+    // Immediate check
+    observeWatermark()
+    
+    // Check frequently for the first few seconds to catch delayed injections
+    const killInterval = setInterval(observeWatermark, 500)
 
     return () => {
       clearTimeout(fallbackTimer)
@@ -190,7 +193,7 @@ export default function Hero() {
         style={{ zIndex: 3 }}
       >
         <div className="flex-grow" /> {/* Spacer pushes content to bottom */}
-        <div className="max-w-[820px] pb-12 md:pb-16 lg:pb-20">
+        <div className="max-w-[820px] pb-24 md:pb-32 lg:pb-40">
           {/* Eyebrow badge */}
           <div className="hero-badge flex items-center gap-2 mb-6">
             <span className="inline-block w-2 h-2 rounded-full bg-champagne pulse-dot" />

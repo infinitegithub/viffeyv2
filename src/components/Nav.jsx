@@ -11,7 +11,7 @@ export default function Nav() {
   const onDarkBackground = !scrolled
   // After scroll, switch to ivory pill → use dark assets
   const logoSrc = onDarkBackground ? '/viffey-logo-dark.svg' : '/viffey-logo.svg'
-  const logoClass = onDarkBackground ? 'h-7 transition-all duration-500 invert' : 'h-7 transition-all duration-500'
+  const logoClass = onDarkBackground ? 'h-10 transition-all duration-500 invert' : 'h-10 transition-all duration-500'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
