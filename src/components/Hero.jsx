@@ -260,11 +260,15 @@ export default function Hero() {
         a[href*="spline.design"], 
         div[style*="z-index: 9999999"],
         div[style*="bottom: 10px"][style*="right: 10px"],
-        div[style*="position: fixed"][style*="z-index: 10000"] { 
+        div[style*="position: fixed"][style*="z-index: 10000"],
+        div[style*="position:absolute"][style*="bottom:10px"][style*="right:10px"],
+        [id*="spline-logo"] { 
           display: none !important; 
           visibility: hidden !important;
           opacity: 0 !important;
           pointer-events: none !important; 
+          width: 0 !important;
+          height: 0 !important;
         }
       `}</style>
     </section>
